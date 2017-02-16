@@ -1,0 +1,51 @@
+{
+  "name": "vue-uniq-ids",
+  "version": "1.0.0",
+  "description": "A generator of unique id-related attributes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/termosa/vue-uniq-ids.git"
+  },
+  "keywords": [
+    "vuejs",
+    "vue",
+    "directive",
+    "unique",
+    "uniq",
+    "id",
+    "for",
+    "aria",
+    "form"
+  ],
+  "author": "Stanislav Termosa <termosa.stanislav@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/termosa/vue-uniq-ids/issues"
+  },
+  "homepage": "https://github.com/termosa/vue-uniq-ids#readme",
+  "devDependencies": {
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-preset-es2015": "6.22.0",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "dependencies": {
+    "qinu": "1.1.2"
+  }
+}

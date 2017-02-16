@@ -1,0 +1,27 @@
+{
+  "name": "vue-uniq-ids",
+  "description": "A generator of unique id-related attributes",
+  "main": "dist/vue-uniq-ids.js",
+  "authors": [
+    "Stanislav Termosa <termosa.stanislav@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "directive",
+    "unique",
+    "uniq",
+    "id",
+    "for",
+    "aria",
+    "form"
+  ],
+  "homepage": "https://github.com/termosa/vue-uniq-ids",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "package.json",
+    "webpack.config.js"
+  ]
+}
