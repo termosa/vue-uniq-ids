@@ -1,20 +1,8 @@
-import qinu from 'qinu'
+import generateIds from './generate-ids.js'
 
-function createDirective(attr, store = {}, options = {}) {
-  const getUniqId = id => {
-    if (!store[id]) {
-      store[id] = qinu(options, id)
-    }
-    return store[id]
-  }
-
-  const generateIds = value => {
-    var list = value instanceof Array ? value : value.split(/\s+/)
-    return list.map(id => getUniqId(id)).join(' ')
-  }
-
+function createDirective(attr, store = {}, options = undefined) {
   return (el, binding) => {
-    const ids = generateIds(binding.value);
+    const ids = generateIds(binding.value, store, options);
     if (ids) {
       el.setAttribute(attr, ids)
     } else {
