@@ -1,10 +1,10 @@
 import qinu from 'qinu'
 
-const getUniqId = (store, id, options = {}) => {
-  if (!store[id]) {
-    store[id] = qinu(options, id)
+const getUniqId = (scope, id, options = {}) => {
+  if (!scope[id]) {
+    scope[id] = qinu(options, id)
   }
-  return store[id]
+  return scope[id]
 }
 
 export default getUniqId

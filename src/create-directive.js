@@ -1,10 +1,26 @@
 import generateIds from './generate-ids.js'
 
-function createDirective(attr, store = {}, options = undefined) {
-  return (el, binding) => {
-    const { value, store: _store } = typeof binding.value === 'object'
-      ? binding.value : { value: binding.value, store };
-    const ids = generateIds(value, _store, options);
+const doesNeedNewScope = opts => (
+  typeof opts.scope !== 'object'
+  && typeof opts.scope !== 'undefined'
+  && opts.scope
+)
+
+function createDirective(attr, options = {}) {
+  return (el, binding, vnode) => {
+    if (!vnode.context.$options.uniqIdsConfig) {
+      vnode.context.$options.uniqIdsConfig = { scope: {} }
+    }
+    const localOpts = vnode.context.$options.uniqIdsConfig
+    if (doesNeedNewScope(localOpts)) {
+      localOpts.scope = {}
+    }
+    const opts = Object.assign({}, options, localOpts)
+    const scope = typeof localOpts.scope === 'object'
+      ? localOpts.scope
+      : localOpts.scope && {} || options.scope || {}
+    const value = binding.value
+    const ids = generateIds(value, scope, opts);
     if (ids) {
       el.setAttribute(attr, ids)
     } else {
