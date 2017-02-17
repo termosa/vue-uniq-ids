@@ -1,7 +1,7 @@
 {
   "name": "vue-uniq-ids",
   "version": "1.0.0",
-  "description": "A generator of unique id-related attributes",
+  "description": "A Vue.js plugin that helps to use id-related attributes with no side-effect",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
