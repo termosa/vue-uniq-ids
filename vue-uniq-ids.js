@@ -1,4 +1,4 @@
-import createDirective from './src/vue-uniq-ids'
+import createDirective from './src/create-directive'
 
 const dirPrefix = 'uni-';
 
