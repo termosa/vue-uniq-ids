@@ -7,7 +7,7 @@ A [Vue.js](https://vuejs.org/) plugin that helps to use id-related attributes wi
 
 It is a trend to use components. Components are cool, they are small, obvious, easy to use and  modular. Untill it comes to the `id` property.
 
-Some HTML tag attributes requires using an `id` property, like `label[for]`, `input[form]` and many of `aria-*` attributes. And the problem with the `id` is that it is not modular. If several `id` properties on the page will has the same value they can affect each other.
+Some HTML tag attributes requires using an `id` property, like `label[for]`, `input[form]` and many of `aria-*` attributes. And the problem with the `id` is that it is not modular. If several `id` properties on the page have the same value they can affect each other.
 
 **VueUniqIds** helps you to get rid of this problem. It provides the set of id-related directives which value is automatically modified by adding [unique string](https://www.npmjs.com/package/qinu) while keeping the attrbitue easy to read.
 
