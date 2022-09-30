@@ -258,6 +258,8 @@ This component will be rendered to code similar to the example below:
 
 ### Accessing and generating ids via JS
 
+Ids generated in template and those that will be generated via `this.uniId()` method have the same scope inside of the same component
+
 ```js
 Vue.use(VueUniqIds)
 Vue.component('input-section', {
@@ -279,8 +281,8 @@ This component will be rendered to code similar to the example below:
 
 ```html
     <div>
-      <label for="input-section-97muvl55">LABEL</label>
-      <input id="input-section-97muvl55" />
+      <label for="text-97muvl55">LABEL</label>
+      <input id="text-97muvl55" />
     </div>
 ```
 
