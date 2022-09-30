@@ -256,6 +256,34 @@ This component will be rendered to code similar to the example below:
     </div>
 ```
 
+### Accessing and generating ids via JS
+
+```js
+Vue.use(VueUniqIds)
+Vue.component('input-section', {
+  props: ['label'],
+  template: '\n\
+    <div>\n\
+      <label v-uni-for="textId">{{label}}</label>\n\
+      <input v-uni-id="\'text\'" />\n\
+    </div>',
+  computed: {
+    textId: function () {
+      return this.uniId('text')
+    }
+  }
+})
+```
+
+This component will be rendered to code similar to the example below:
+
+```html
+    <div>
+      <label for="input-section-97muvl55">LABEL</label>
+      <input id="input-section-97muvl55" />
+    </div>
+```
+
 ## License
 
 MIT © [Stanislav Termosa](https://github.com/termosa)

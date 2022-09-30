@@ -1,4 +1,5 @@
 import createDirective from './create-directive'
+import getUniqId from './get-uniq-id'
 
 const prefix = 'uni-'
 
@@ -30,7 +31,17 @@ const createMixin = (options) => {
     options
   )
   return {
-    directives: createDirectives(opts)
+    directives: createDirectives(opts),
+    methods: {
+      uniId: function (idAlias) {
+        if (!this.$options.uniqIdsConfig) {
+          this.$options.uniqIdsConfig = { scope: {} };
+        }
+        const localOpts = this.$options.uniqIdsConfig;
+        const settledOpts = Object.assign({}, opts, localOpts);
+        return getUniqId(settledOpts.scope, idAlias, settledOpts);
+      }
+    }
   }
 }
 
